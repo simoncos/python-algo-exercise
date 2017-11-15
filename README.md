@@ -1,0 +1,2 @@
+# python-algo-excercise
+Naive
