@@ -1,11 +1,14 @@
 def sum_recursive(numbers):
-    if len(numbers) == 1:
-        return numbers[0]
+    if len(numbers) == 0:
+        return 0
     else:
-        # method 1
-        return numbers.pop() + sum_recursive(numbers)
-        # method 2: better not edit original data
-        # return numbers[0] + sum_recursive(numbers[1:])
+        return numbers[0] + sum_recursive(numbers[1:])
+
+def count_recursive(list_):
+    if len(list_) == 0:
+        return 0
+    else:
+        return 1 + count_recursive(list_[1:])
 
 def sum_loop(numbers):
     result = 0
@@ -20,12 +23,13 @@ def count_loop(list_):
         list_.pop()
     return result
 
-def count_recursive(list_):
-    if len(list_) == 0:
-        return 0
-    else:
-        # method 1
-        list_.pop()
-        return 1 + count_recursive(list_)
-        # method 2: better not edit original data
-        # return 1 + list_[:1]
+a = [1,2,3,4,5]
+b = []
+
+print('a:')
+print('sum_r: {}, sum_l: {}'.format(sum_recursive(a), sum_loop(a)))
+print('count_r: {}, count_l: {}'.format(count_recursive(a), count_loop(a)))
+
+print('b:')
+print('sum_r: {}, sum_l: {}'.format(sum_recursive(b), sum_loop(b)))
+print('count_r: {}, count_l: {}'.format(count_recursive(b), count_loop(b)))

@@ -35,3 +35,6 @@ def binary_search(list_, item):
         else:
             high = mid - 1
     return None
+
+print('search -1:', binary_search(list_, -1))
+print('search 3:', binary_search(list_, 3))
